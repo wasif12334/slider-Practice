@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gallarey-wrap">
+        <img src="/images/back.png" alt="" id="backbtn">
+        <div class="gallarey">
+            <div>
+                <span><img src="/images/image-1.png" alt=""></span>
+                <span><img src="/images/image-2.png" alt=""></span>
+                <span><img src="images/image-3.png" alt=""></span>
+            </div>
+            <div>
+                <span><img src="/images/image-4.png" alt=""></span>
+                <span><img src="/images/image-5.png" alt=""></span>
+                <span><img src="images/image-6.png" alt=""></span>
+            </div>
+           </div>
+        <img src="/images/next.png" alt="" id="nextbtn" >
+    </div>
+  
+
+
+
+    <!--JS-->
+    <script>
+    let scrollcontainer= document.getElementsByClassName(".gallarey");
+    let nextbtn = document.getElementById("nextbtn");
+    let backbtn = document.getElementById("backbtn");
+
+    scrollcontainer.addEventListiner("wheel", (evt) => {
+        evt.preventDefault();
+        scrollcontainer.scrollleft+=evt.deltaY;
+    });
+    nextbtn.addEventListiner("click", () => {
+        scrollcontainer.scrollleft +=900;
+    });
+    backbtn.addEventListiner("click", () => {
+        scrollcontainer.scrollleft -= 900;
+    });
+    
+    
+</script>
+</body>
+</html>
